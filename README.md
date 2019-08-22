@@ -1,2 +1,2 @@
 # Traveling
-Webpage about traveling buit with NodeJS
+Webpage about traveling built with NodeJS
