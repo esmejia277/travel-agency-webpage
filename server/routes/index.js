@@ -6,7 +6,9 @@ module.exports = () => {
         res.render('index');
     });
     router.get('/nosotros', (req, res) => {
-        res.render('nosotros');
+        res.render('nosotros', {
+            page: 'Sobre nosotros'
+        });
     });
     return router;
 }

@@ -8,6 +8,9 @@ html(lang="en")
         link(href='https://fonts.googleapis.com/css?family=Covered+By+Your+Grace|Open+Sans:400,700|Staatliches&display=swap', rel='stylesheet')
         link(rel="stylesheet", href="css/style.css")
 
-        title Document
+        title #{mode} | #{page}
     body
+        include includes/header
         block content
+        include includes/footer
+        
