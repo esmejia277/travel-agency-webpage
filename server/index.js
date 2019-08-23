@@ -4,6 +4,10 @@ const routes = require('./routes');
 const path = require('path');
 const configs = require('./config');
 
+// db.authenticate()
+//     .then(() => console.log('connected'))
+//         .catch(error => console.log(error))
+
 //load router
 app.use('/', routes());
 
