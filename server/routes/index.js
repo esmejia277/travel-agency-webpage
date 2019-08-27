@@ -5,7 +5,29 @@ const Testimonial = require('../models/Testimoniales');
 
 module.exports = () => {
     router.get('/', (req, res) => {
-        res.render('index');
+        const promises = []
+        promises.push(
+            Viaje.findAll({
+                limit: 3
+            })
+        )
+
+        promises.push(
+            Testimonial.findAll({
+                limit: 3
+            })
+        )
+        const result = Promise.all(promises);
+        result.then((result) => {
+            res.render('index', {
+                page: 'Próximos viajes',
+                clase: 'home',
+                travel : result[0],
+                testimonial : result[1]
+            });
+        }).catch((err) => {
+            console.log('error' ,err);
+        });
     });
     router.get('/nosotros', (req, res) => {
         res.render('nosotros', {
@@ -15,7 +37,6 @@ module.exports = () => {
     router.get('/viajes', (req, res) => {
         Viaje.findAll()
             .then((viajes) => {
-                console.log(viajes);
                 res.render('viajes', {
                     page: 'Próximos viajes',
                     travel: viajes
@@ -65,7 +86,6 @@ module.exports = () => {
         }
 
         if (errors.length > 0){
-            console.log('ERRORES', errors);
             res.render('testimoniales', {
                 errors,
                 nombre,

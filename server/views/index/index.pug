@@ -1,1 +1,27 @@
-h1 Inicio
+extends ../layout/index
+block slider
+    .slider
+        h1 Rio de Janeiro
+        em Aventura
+block content
+    main.container.mt-5
+        h2.text-center.mb-5 Sobre nosotros
+        .row.mb-5
+            .col-md-6
+                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, provident eum ex natus aperiam obcaecati quos aliquid! Sunt exercitationem eum corporis voluptas recusandae sed praesentium rerum, fuga, laudantium maxime cupiditate.
+                p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde numquam quam ex rerum cumque iste possimus! Magni officiis laborum numquam aut eligendi illum quos nobis quam, consequatur autem! Libero, placeat?
+            .col-md-6
+                img(src="/img/inicio_nosotros.jpg", class="img-fluid")
+        h2.text-center.mb-5 Próximos viajes
+        include ../layout/partials/viajes
+    .descuento
+        .container
+            .row
+                .col-md-6
+                    .contenido
+                        h3 5% de descuento
+                        p.titulo Viaje a canadá
+                        p.fecha 20 de Marzo de 2019 - 28 de Marzo de 2019
+    .container
+        h2.text-center.my-5 Testimoniales
+        include ../layout/partials/testimoniales

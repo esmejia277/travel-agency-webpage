@@ -31,6 +31,7 @@ app.use((req, res, next) => {
     const date = new Date();
     //save value in local
     res.locals.actualDate = date.getFullYear();
+    res.locals.ruta = req.path;
     return next();
 });
 
