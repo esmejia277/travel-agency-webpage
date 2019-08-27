@@ -3,6 +3,10 @@ const app = express();
 const routes = require('./routes');
 const path = require('path');
 const configs = require('./config');
+const bodyParser = require('body-parser');
+const sequelize = require('./config/database');
+
+app.use(bodyParser.urlencoded({extended: true}));
 
 app.use('/', routes());
 
