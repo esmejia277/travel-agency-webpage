@@ -5,6 +5,7 @@ const path = require('path');
 const configs = require('./config');
 const bodyParser = require('body-parser');
 const sequelize = require('./config/database');
+require('dotenv').config({ path: 'vars.env' })
 
 app.use(bodyParser.urlencoded({extended: true}));
 
@@ -35,4 +36,10 @@ app.use((req, res, next) => {
     return next();
 });
 
-app.listen(3000);
+const host = process.env.HOST || '0.0.0.0';
+const port = process.env.PORT || 3000;
+
+
+app.listen(port, host, () => {
+    console.log('working!!');
+});
