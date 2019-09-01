@@ -146,9 +146,14 @@ i {
 }
 
 .testimoniales p{
-    font-size: .8rem;
+    font-size: 0.9rem;
     font-weight: normal;
 }
+
+.card{
+    border-radius: 30px !important;
+}
+
 .testimoniales p::before {
     background-image: url(../img/quote.jpg);
     background-repeat: no-repeat;
